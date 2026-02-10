@@ -1,0 +1,8 @@
+{
+  "frontend/src/App.tsx": "Main app component that sets the document title to \"Sabji wala\" and renders the LandingPage component.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook that fetches the app name from the backend using the actor, with loading states and fallback to \"Sabji wala\".",
+  "frontend/src/components/BrandHeader.tsx": "Sticky header component displaying the Sabji wala logo, app name fetched from backend with loading skeleton, and navigation links.",
+  "frontend/src/pages/LandingPage.tsx": "Complete landing page with hero section, freshness promise, how it works, why choose us sections, and footer with social links and caffeine.ai attribution.",
+  "frontend/src/index.css": "Global styles with fresh produce-themed OKLCH color palette using greens and warm oranges for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Inter font family and custom design tokens matching the fresh produce theme."
+}

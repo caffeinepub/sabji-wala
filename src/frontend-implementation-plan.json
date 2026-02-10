@@ -1,0 +1,132 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Sabji wala – branded landing page (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Apply “Sabji wala” branding across the frontend UI and browser/tab title, keeping all user-facing text in English.",
+      "acceptanceCriteria": [
+        "The main page prominently displays the app name “Sabji wala”.",
+        "The browser/tab title shows “Sabji wala”.",
+        "No user-facing text is introduced in non-English languages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Ensure the base HTML document title is set to “Sabji wala” so the browser/tab title is correct on initial load."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the root App component that renders the landing page and sets the runtime document title to “Sabji wala” for consistent branding across navigations/renders."
+        },
+        {
+          "path": "frontend/src/components/BrandHeader.tsx",
+          "operation": "create",
+          "description": "Create a header component that prominently displays the “Sabji wala” brand name and uses English-only navigation/CTA text (no commerce flows). Use shadcn-ui components for consistent styling; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build a polished, simple landing page layout (header + hero + at least one informational section) for a fresh-produce concept without commerce features.",
+      "acceptanceCriteria": [
+        "Landing page has a header and hero section with the “Sabji wala” name.",
+        "Page includes at least one additional section (e.g., “How it works”, “Why choose us”, or “Freshness promise”) using English copy.",
+        "No cart, checkout, payment, or ordering workflow is implemented."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "create",
+          "description": "Create the landing page UI with a clear layout: header, hero section (brand + tagline + optional non-commerce CTA), and at least one informational section (e.g., Freshness Promise / How it works) using English copy only. Use shadcn-ui components (e.g., Card/Button/Badge) for polished layout; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the LandingPage into the app so it is rendered as the main screen (no additional routes/pages unless already present)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Define and apply a cohesive non-blue/non-purple visual theme (colors, typography, spacing, component styling) consistently across the landing page.",
+      "acceptanceCriteria": [
+        "A consistent theme is applied (color palette, typography, and spacing).",
+        "Primary/brand colors are not blue/purple.",
+        "UI looks intentionally designed rather than unstyled defaults."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global theme styles using Tailwind + CSS variables consistent with shadcn composition (e.g., warm produce palette with greens/oranges, not blue/purple). Establish typography/spacing defaults and background/foreground colors used across the landing page."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions as needed to support the chosen produce brand look (e.g., custom brand color tokens/shadows) while keeping primary colors non-blue/non-purple."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Apply the theme consistently across sections (spacing scale, typography hierarchy, buttons/cards styling) using Tailwind utilities and shadcn-ui composition; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Fetch the app name from the backend and render it on the landing page with a sensible loading state to confirm integration.",
+      "acceptanceCriteria": [
+        "Backend exposes a query method returning app info that includes the name “Sabji wala”.",
+        "Frontend calls the backend and renders the returned name on the page.",
+        "The page still renders with a sensible loading state while fetching."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAppName.ts",
+          "operation": "create",
+          "description": "Create a React Query hook that uses the existing useActor hook to call the backend capability getAppName() and returns {data,isLoading,isError} for UI consumption (no authentication required)."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire the useAppName hook into the header/hero area to display the returned app name and show a sensible loading placeholder while fetching. Use shadcn-ui components (e.g., Skeleton/Badge) if available for loading state; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add required generated images as static assets and display them on the landing page (logo + hero illustration) without using the backend for images.",
+      "acceptanceCriteria": [
+        "Generated images are stored in frontend/public/assets/generated.",
+        "Landing page displays the logo and hero illustration from these static paths.",
+        "No backend code is used to host or proxy these images."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/sabji-wala-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated logo asset as a static file at frontend/public/assets/generated/sabji-wala-logo.dim_512x512.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/sabji-wala-hero.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated hero illustration asset as a static file at frontend/public/assets/generated/sabji-wala-hero.dim_1600x900.png."
+        },
+        {
+          "path": "frontend/src/components/BrandHeader.tsx",
+          "operation": "modify",
+          "description": "Render the logo image from frontend/public/assets/generated/sabji-wala-logo.dim_512x512.png in the header, aligned with the “Sabji wala” brand."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Render the hero illustration from frontend/public/assets/generated/sabji-wala-hero.dim_1600x900.png in the hero section and ensure it’s responsive and matches the theme (static asset only; no backend image serving)."
+        }
+      ]
+    }
+  ]
+}

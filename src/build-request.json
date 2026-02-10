@@ -1,0 +1,126 @@
+{
+  "kind": "build_request",
+  "title": "Create initial app branded as “Sabji wala”",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Set the application branding to “Sabji wala” across the frontend, including the visible app title/header on the main screen and the browser/tab title (document title). All user-facing text must be in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Sabji wala name se app bna hua chahiye mujhe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The main page prominently displays the app name “Sabji wala”.",
+        "The browser/tab title shows “Sabji wala”.",
+        "No user-facing text is introduced in non-English languages."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a simple, polished landing page for the “Sabji wala” app with a clear layout (header + hero section + at least one informational section) suitable for a fresh-produce/vegetable shop concept, without implementing commerce features.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Sabji wala name se app bna hua chahiye mujhe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page has a header and hero section with the “Sabji wala” name.",
+        "Page includes at least one additional section (e.g., “How it works”, “Why choose us”, or “Freshness promise”) using English copy.",
+        "No cart, checkout, payment, or ordering workflow is implemented."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply one coherent visual theme for the app (colors, typography, spacing, and component styling) and enforce it consistently across the landing page. Choose a distinct style appropriate for a vegetable/fresh-produce brand and avoid default-looking styling. Do not use a blue/purple primary palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Sabji wala name se app bna hua chahiye mujhe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A consistent theme is applied (color palette, typography, and spacing).",
+        "Primary/brand colors are not blue/purple.",
+        "UI looks intentionally designed rather than unstyled defaults."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a minimal backend endpoint that returns basic app info (at minimum the app name “Sabji wala”), and wire the frontend to read and display this value somewhere on the landing page (e.g., near the header/hero) to confirm frontend-backend integration.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Sabji wala name se app bna hua chahiye mujhe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes a query method returning app info that includes the name “Sabji wala”.",
+        "Frontend calls the backend and renders the returned name on the page.",
+        "The page still renders with a sensible loading state while fetching."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add the generated image assets to the frontend as static files under frontend/public/assets/generated and use them on the landing page (e.g., logo in header and hero illustration in hero section). Do not serve images from the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Sabji wala name se app bna hua chahiye mujhe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are stored in frontend/public/assets/generated.",
+        "Landing page displays the logo and hero illustration from these static paths.",
+        "No backend code is used to host or proxy these images."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor (all logic in backend/main.mo); only add a migration file if state upgrades are required.",
+    "Do not edit frontend immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Use React + TypeScript, Tailwind CSS, shadcn UI composition, and React Query for data fetching/state management."
+  ],
+  "nonGoals": [
+    "Implementing ordering, cart, checkout, payments, delivery tracking, or inventory management.",
+    "Adding third-party authentication providers (only Internet Identity is allowed, but not required for this request).",
+    "Real-time chat or WebSocket-based features."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Flat vector logo mark with vegetables and the text “Sabji wala”, clean and modern (sabji-wala-logo.dim_512x512.png)",
+      "Warm, fresh-produce themed hero illustration (market/vegetables composition), minimal and friendly, no photo-realism (sabji-wala-hero.dim_1600x900.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for user-facing text."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

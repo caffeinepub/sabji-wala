@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create an app named \"Sabji wala\".",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Flat vector logo mark with vegetables and the text “Sabji wala”, clean and modern (sabji-wala-logo.dim_512x512.png)\n- Warm, fresh-produce themed hero illustration (market/vegetables composition), minimal and friendly, no photo-realism (sabji-wala-hero.dim_1600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-set-the-application-branding-to-sabji-wala-across-the-frontend-including-the-visible-app-title-header-on-the-main-screen-and-the-browser-tab-title-document-title-all-user-facing-text-must-be-in-english",
+      "title": "Set the application branding to “Sabji wala” across the frontend, including the visible app title/header on the main screen and the browser/tab title (document title). All user-facing text must be in English.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-simple-polished-landing-page-for-the-sabji-wala-app-with-a-clear-layout-header-hero-section-at-least-one-informational-section-suitable-for-a-fresh-produce-vegetable-shop-concept-without-implementing-commerce-features",
+      "title": "Create a simple, polished landing page for the “Sabji wala” app with a clear layout (header + hero section + at least one informational section) suitable for a fresh-produce/vegetable shop concept, without implementing commerce features.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-one-coherent-visual-theme-for-the-app-colors-typography-spacing-and-component-styling-and-enforce-it-consistently-across-the-landing-page-choose-a-distinct-style-appropriate-for-a-vegetable-fresh-produce-brand-and-avoid-default-looking-styling-do-not-use-a-blue-purple-primary-palette",
+      "title": "Apply one coherent visual theme for the app (colors, typography, spacing, and component styling) and enforce it consistently across the landing page. Choose a distinct style appropriate for a vegetable/fresh-produce brand and avoid default-looking styling. Do not use a blue/purple primary palette.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-minimal-backend-endpoint-that-returns-basic-app-info-at-minimum-the-app-name-sabji-wala-and-wire-the-frontend-to-read-and-display-this-value-somewhere-on-the-landing-page-e-g-near-the-header-hero-to-confirm-frontend-backend-integration",
+      "title": "Add a minimal backend endpoint that returns basic app info (at minimum the app name “Sabji wala”), and wire the frontend to read and display this value somewhere on the landing page (e.g., near the header/hero) to confirm frontend-backend integration.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-image-assets-to-the-frontend-as-static-files-under-frontend-public-assets-generated-and-use-them-on-the-landing-page-e-g-logo-in-header-and-hero-illustration-in-hero-section-do-not-serve-images-from-the-backend",
+      "title": "Add the generated image assets to the frontend as static files under frontend/public/assets/generated and use them on the landing page (e.g., logo in header and hero illustration in hero section). Do not serve images from the backend.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build an app named \"Sabji wala\".",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Sabji wala",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
